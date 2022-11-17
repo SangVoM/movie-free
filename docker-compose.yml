@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  movie-free:
+    image: movie-free
+    container_name: movie-free
+    ports:
+      - "5050:5050"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - .:/${movie-free}
+      - /${movie-free}/node_modules
+
